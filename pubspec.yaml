@@ -66,6 +66,7 @@ flutter:
     - ./asset/image/doubtly_logo.png
     - ./asset/image/x_logo.png
     - ./asset/image/instagram_logo.png
+    - ./asset/image/gmail_icon.png
 
   fonts:
     - family: Poppins

@@ -55,9 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               "Portfolio",
-              style: Theme.of(
-                context,
-              ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
             ),
           ),
           Column(
@@ -67,11 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextButton.icon(
-                  icon: Image.asset(
-                    headerItemList[index].imagePath,
-                    height: 28,
-                    width: 28,
-                  ),
+                  icon: Image.asset(headerItemList[index].imagePath, height: 28, width: 28),
                   label: Text(headerItemList[index].title),
                   onPressed: () => openUrlNewTab(headerItemList[index].link),
                 ),
@@ -96,18 +90,12 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Text(
             "Portfolio",
-            style: Theme.of(
-              context,
-            ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
           ),
           Row(
             children: List<Widget>.generate(headerItemList.length, (index) {
               return TextButton.icon(
-                icon: Image.asset(
-                  headerItemList[index].imagePath,
-                  height: 28,
-                  width: 28,
-                ),
+                icon: Image.asset(headerItemList[index].imagePath, height: 28, width: 28),
                 label: Text(headerItemList[index].title),
                 onPressed: () => openUrlNewTab(headerItemList[index].link),
               );
@@ -154,8 +142,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Theme.of(context).primaryColor,
               ),
               width: _screenWidth * 0.3,
-              height: 5,
+              height: 3,
             ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            aboutMe,
+            textAlign: TextAlign.center,
+            style: _isMobile
+                ? Theme.of(context).textTheme.bodyMedium
+                : Theme.of(context).textTheme.bodyMedium,
           ),
           SizedBox(height: 10),
         ],
@@ -176,17 +172,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(
-                      context,
-                    ).primaryColor.withValues(alpha: 0.2),
+                    color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.all(Radius.circular(25)),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: Icon(
-                      Icons.school_rounded,
-                      color: Theme.of(context).primaryColor,
-                    ),
+                    child: Icon(Icons.school_rounded, color: Theme.of(context).primaryColor),
                   ),
                 ),
               ),
@@ -211,8 +202,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         educationList[index].instituteName!,
-                        style: Theme.of(context).textTheme.titleMedium!
-                            .copyWith(fontWeight: FontWeight.bold),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
                     Padding(
@@ -226,22 +218,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(5)),
-                        color: Theme.of(
-                          context,
-                        ).primaryColor.withValues(alpha: 0.2),
+                        color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 4,
-                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         child: Text(
                           educationList[index].grade!,
-                          style: Theme.of(context).textTheme.labelLarge!
-                              .copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: Theme.of(context).primaryColor,
-                              ),
+                          style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ),
@@ -268,17 +254,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(
-                      context,
-                    ).primaryColor.withValues(alpha: 0.2),
+                    color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.all(Radius.circular(25)),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: Icon(
-                      Icons.work_rounded,
-                      color: Theme.of(context).primaryColor,
-                    ),
+                    child: Icon(Icons.work_rounded, color: Theme.of(context).primaryColor),
                   ),
                 ),
               ),
@@ -291,7 +272,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           Column(
-            children: List<Widget>.generate(experianceList.length, (index) {
+            children: List<Widget>.generate(experienceList.length, (index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
@@ -305,9 +286,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               softWrap: true,
-                              experianceList[index].companyName!,
-                              style: Theme.of(context).textTheme.titleMedium!
-                                  .copyWith(fontWeight: FontWeight.bold),
+                              experienceList[index].companyName!,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                             ),
                           ),
 
@@ -315,37 +297,34 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "|",
-                              style: Theme.of(context).textTheme.titleMedium!
-                                  .copyWith(fontWeight: FontWeight.bold),
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 4,
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                             child: Text(
-                              experianceList[index].duration!,
-                              style: Theme.of(context).textTheme.titleMedium!
-                                  .copyWith(fontWeight: FontWeight.bold),
+                              experienceList[index].duration!,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                             ),
                           ),
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 4,
-                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         child: Text(
-                          experianceList[index].role!,
-                          style: Theme.of(context).textTheme.titleSmall!
-                              .copyWith(fontWeight: FontWeight.bold),
+                          experienceList[index].role!,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(4),
-                        child: Text(experianceList[index].description!),
+                        child: Text(experienceList[index].description!),
                       ),
                     ],
                   ),
@@ -395,10 +374,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   Text(
                                     p.projectName,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineSmall!
-                                        .copyWith(fontWeight: FontWeight.bold),
+                                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -413,17 +391,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   Text(
                                     p.projectName,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineLarge!
-                                        .copyWith(fontWeight: FontWeight.bold),
+                                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                   Text(
                                     p.projectTagline,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleSmall!
-                                        .copyWith(fontWeight: FontWeight.bold),
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -435,9 +411,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     Wrap(
                       spacing: 8,
-                      children: p.projectTechStack
-                          .map((tech) => Chip(label: Text(tech)))
-                          .toList(),
+                      children: p.projectTechStack.map((tech) => Chip(label: Text(tech))).toList(),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -481,10 +455,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> openUrlNewTab(String url) async {
-    await launchUrl(
-      Uri.parse(url),
-      webOnlyWindowName: "_blank", // 👈 opens in new tab on web
-    );
+    await launchUrl(Uri.parse(url), webOnlyWindowName: "_blank");
   }
 
   Widget _socialLinksSection() {
@@ -498,17 +469,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(
-                      context,
-                    ).primaryColor.withValues(alpha: 0.2),
+                    color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.all(Radius.circular(25)),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: Icon(
-                      Icons.link_rounded,
-                      color: Theme.of(context).primaryColor,
-                    ),
+                    child: Icon(Icons.link_rounded, color: Theme.of(context).primaryColor),
                   ),
                 ),
               ),
@@ -528,11 +494,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: TextButton.icon(
                 onPressed: () => openUrlNewTab(socialList[index].link),
                 label: Text(socialList[index].title),
-                icon: Image.asset(
-                  socialList[index].imagePath,
-                  width: 32,
-                  height: 32,
-                ),
+                icon: Image.asset(socialList[index].imagePath, width: 32, height: 32),
               ),
             );
           }),
@@ -584,17 +546,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       category.title,
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 8),
                     Wrap(
                       spacing: 8,
                       runSpacing: 6,
-                      children: category.skills
-                          .map((skill) => Chip(label: Text(skill)))
-                          .toList(),
+                      children: category.skills.map((skill) => Chip(label: Text(skill))).toList(),
                     ),
                   ],
                 ),

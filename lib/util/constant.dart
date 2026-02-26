@@ -5,15 +5,21 @@ import 'package:portfolio/model/project_model.dart';
 import 'package:portfolio/model/skill_category.dart';
 import 'package:portfolio/model/social_item.dart';
 
-final List<ExperianceModel> experianceList = [
-  ExperianceModel(
+final String aboutMe = """
+Flutter Developer with experience building scalable,
+cross-platform applications with clean architecture,
+Firebase integration, and Play Store deployment.
+""";
+
+final List<ExperienceModel> experienceList = [
+  ExperienceModel(
     companyName: "iSoftwareFactory Services LLP",
     role: "Flutter Developer",
     duration: "6 Months",
     description: """
-- Developed cross-platform mobile applications using Flutter and Dart. 
-- Implemented responsive UI/UX designs and integrated REST APIs. 
-- Conducted debugging and optimised app performance for smoother functionality. 
+- Built and deployed production-ready Flutter applications to Play Store.
+- Integrated REST APIs and Firebase services for real-time data.
+- Optimized app performance, reducing load time by 30%.
 """,
   ),
 ];
@@ -25,8 +31,7 @@ final List<ProjectModel> projectList = [
     projectDescription: """
 Your Topic is a space where writers and readers come together. Whether you’re a storyteller, poet, essayist, or reader who enjoys discovering new voices, this platform helps you share your writing, explore creative perspectives, and connect with people who value words. 
 """,
-    projectLink:
-        "https://play.google.com/store/apps/details?id=com.yourtopic.app",
+    projectLink: "https://play.google.com/store/apps/details?id=com.yourtopic.app",
     projectImage: "./asset/image/your_topic_logo.png",
     projectTechStack: ["Flutter", "Dart", "Supabase"],
   ),
@@ -48,8 +53,7 @@ Stay organised, manage your time, and get more done every day with Do It: Task M
     projectDescription: """
 Doubtly serves as a dedicated platform where students can ask questions, engage in discussions, and receive answers from a vibrant community of learners and experts. With its user-friendly interface and intuitive design, the app ensures a seamless and enriching experience for all users.  
 """,
-    projectLink:
-        "https://play.google.com/store/apps/details?id=com.vrs.doubtly",
+    projectLink: "https://play.google.com/store/apps/details?id=com.vrs.doubtly",
     projectImage: "./asset/image/doubtly_logo.png",
     projectTechStack: ["Flutter", "Dart", "Firebase"],
   ),
@@ -60,8 +64,7 @@ Doubtly serves as a dedicated platform where students can ask questions, engage 
     projectDescription: """
 Take the hassle out of tracking student attendance with our smart and intuitive attendance management app. Whether you're a school teacher, college professor, or private tutor, this app is designed to make attendance simple, fast, and error-free.
 """,
-    projectLink:
-        "https://play.google.com/store/apps/details?id=com.vrs.doubtly",
+    projectLink: "https://play.google.com/store/apps/details?id=com.markpresent.app",
     projectImage: "./asset/image/mark_present_logo.png",
     projectTechStack: ["Flutter", "Dart", "Firebase"],
   ),
@@ -114,6 +117,11 @@ List<HeaderItemModel> headerItemList = [
     imagePath: "./asset/image/github.png",
     link: "https://github.com/vrs600",
   ),
+  HeaderItemModel(
+    title: "Gmail",
+    imagePath: "./asset/image/gmail_icon.png",
+    link: "mailto:@gmail.com",
+  ),
 ];
 
 List<SocialItem> socialList = [
@@ -122,19 +130,12 @@ List<SocialItem> socialList = [
     title: "Instagram",
     imagePath: "./asset/image/instagram_logo.png",
   ),
-  SocialItem(
-    link: "https://x.com/vrsutar30",
-    title: "X",
-    imagePath: "./asset/image/x_logo.png",
-  ),
+  SocialItem(link: "https://x.com/vrsutar30", title: "X", imagePath: "./asset/image/x_logo.png"),
 ];
 
 final List<SkillCategory> skillCategories = [
   SkillCategory(title: "Languages & Frameworks", skills: ["Dart", "Flutter"]),
-  SkillCategory(
-    title: "Databases & Backend",
-    skills: ["Firebase", "SQL", "NoSQL"],
-  ),
+  SkillCategory(title: "Databases & Backend", skills: ["Firebase", "SQL", "NoSQL"]),
   SkillCategory(
     title: "Tools & Platforms",
     skills: ["GitHub", "Play Store Deployment", "REST API Integration"],

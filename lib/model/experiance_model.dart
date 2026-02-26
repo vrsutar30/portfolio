@@ -1,13 +1,8 @@
-class ExperianceModel {
+class ExperienceModel {
   String? companyName;
   String? role;
   String? duration;
   String? description;
 
-  ExperianceModel({
-    this.companyName,
-    this.role,
-    this.duration,
-    this.description,
-  });
+  ExperienceModel({this.companyName, this.role, this.duration, this.description});
 }
