@@ -14,7 +14,11 @@ class _PortfolioAppState extends State<PortfolioApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
-      theme: ThemeData(useMaterial3: true, fontFamily: 'Poppins'),
+      theme: ThemeData(
+        useMaterial3: true,
+        fontFamily: 'Poppins',
+        scaffoldBackgroundColor: Colors.white,
+      ),
     );
   }
 }
